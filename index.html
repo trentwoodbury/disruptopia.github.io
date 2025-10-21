@@ -145,29 +145,33 @@
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const hp = document.getElementById('hp');
-      if (hp.value) return; // basic honeypot
+
+      // Honeypot
+      if (document.getElementById('hp').value) return;
+
       const ok = document.getElementById('status-ok');
       const err = document.getElementById('status-err');
       ok.className = 'status';
       err.className = 'status';
 
       const data = Object.fromEntries(new FormData(form));
+      // Optional subject to label emails in Formspree
+      data._subject = 'Disruptopia contact';
+
       try {
-        // Replace ACTION_URL with your form backend endpoint.
-        const ACTION_URL = 'REPLACE_WITH_SECURE_FORM_ENDPOINT';
-        const res = await fetch(ACTION_URL, {
+        const res = await fetch('https://formspree.io/f/myznalpo', {
           method: 'POST',
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
+
         if (res.ok) {
           ok.className = 'status ok';
           form.reset();
         } else {
           err.className = 'status err';
         }
-      } catch (_) {
+      } catch {
         err.className = 'status err';
       }
     });
