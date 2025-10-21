@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Disruptopia</title>
+  <meta name="description" content="Disruptopia board game resources and contact." />
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#111826; --muted:#9fb0c3; --text:#e6eef8; --accent:#64d2ff; --accent-2:#00ffa6; --danger:#ff6476;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:radial-gradient(1200px 800px at 100% -10%,#112335 20%,transparent),radial-gradient(900px 700px at -10% 110%,#0f1b28 10%,transparent),var(--bg);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1000px;margin:auto;padding:32px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 10px 30px rgba(0,255,166,.25)}
+    h1{font-size:28px;letter-spacing:.5px;margin:0}
+    .tag{font-size:14px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{grid-column:span 4;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid rgba(255,255,255,.07);border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.35);padding:18px;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.45);border-color:rgba(255,255,255,.18)}
+    .card h2{font-size:18px;margin:4px 0 8px}
+    .card p{margin:0 0 14px;color:var(--muted);font-size:14px}
+    .cta{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(100,210,255,.07);border:1px solid rgba(100,210,255,.35);padding:10px 12px;border-radius:12px}
+    .cta span{font-size:14px}
+    .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#001418;font-weight:600}
+    .btn:focus{outline:2px solid var(--accent)}
+    .contact{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:18px}
+    form{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    label{font-size:13px;color:var(--muted)}
+    .field{grid-column:span 6;display:flex;flex-direction:column;gap:8px}
+    .field.full{grid-column:span 12}
+    input,textarea{width:100%;padding:12px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0e1520;color:var(--text)}
+    input:focus,textarea:focus{outline:2px solid var(--accent)}
+    textarea{min-height:140px;resize:vertical}
+    .actions{display:flex;gap:12px;align-items:center}
+    .pill{font-size:12px;color:var(--muted)}
+    .note{font-size:12px;color:var(--muted)}
+    .status{display:none;margin-top:10px;font-size:14px}
+    .status.ok{display:block;color:var(--accent-2)}
+    .status.err{display:block;color:var(--danger)}
+    footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}
+    @media (max-width:900px){.card{grid-column:span 6}.field{grid-column:span 12}}
+    @media (max-width:580px){header{flex-direction:column;align-items:flex-start}.card{grid-column:span 12}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Disruptopia</h1>
+          <div class="tag">Board game resources and contact</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="Resources">
+      <article class="card" aria-labelledby="tts-title">
+        <h2 id="tts-title">Tabletop Simulator</h2>
+        <p>Load the latest TTS mod file.</p>
+        <div class="cta">
+          <span>Open the .json</span>
+          <a class="btn" href="REPLACE_WITH_TTS_FILE_URL" target="_blank" rel="noopener">Download</a>
+        </div>
+      </article>
+
+      <article class="card" aria-labelledby="yt-title">
+        <h2 id="yt-title">Tutorial Video</h2>
+        <p>How to play.</p>
+        <div class="cta">
+          <span>Watch on YouTube</span>
+          <a class="btn" href="REPLACE_WITH_YOUTUBE_URL" target="_blank" rel="noopener">Watch</a>
+        </div>
+      </article>
+
+      <article class="card" aria-labelledby="pdf-title">
+        <h2 id="pdf-title">Rulebook (PDF)</h2>
+        <p>Current version of the rules.</p>
+        <div class="cta">
+          <span>View the Rulebook</span>
+          <a class="btn" href="DisruptopiaRulebook.pdf" target="_blank" rel="noopener">Open</a>
+        </div>
+      </article>
+
+        <article class="card" aria-labelledby="sell-title">
+          <h2 id="sell-title">Sell Sheet (PDF)</h2>
+          <p>Quick overview for publishers and retailers.</p>
+          <div class="cta">
+            <span>View the Sell Sheet</span>
+            <a class="btn" href="DisruptopiaSellSheet.pdf" target="_blank" rel="noopener">Open</a>
+          </div>
+        </article>
+
+
+      <article class="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" style="margin:0 0 8px">Contact</h2>
+        <p class="note" style="margin-top:0">Use the form to send an email without seeing the address.</p>
+        <form id="contact-form" aria-describedby="contact-note">
+          <!-- Replace ACTION_URL with your provider endpoint (e.g., Formspree, Getform, Basin). -->
+          <input type="hidden" name="_gotcha" id="hp" value="" />
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <div class="field full actions">
+            <button class="btn" type="submit">Send</button>
+            <span class="pill">Avg reply: 1–3 days</span>
+          </div>
+          <div id="status-ok" class="status ok" role="status" aria-live="polite">Message sent. Check your inbox for confirmation.</div>
+          <div id="status-err" class="status err" role="status" aria-live="assertive">Send failed. Try again later.</div>
+        </form>
+      </article>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Disruptopia
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const hp = document.getElementById('hp');
+      if (hp.value) return; // basic honeypot
+      const ok = document.getElementById('status-ok');
+      const err = document.getElementById('status-err');
+      ok.className = 'status';
+      err.className = 'status';
+
+      const data = Object.fromEntries(new FormData(form));
+      try {
+        // Replace ACTION_URL with your form backend endpoint.
+        const ACTION_URL = 'REPLACE_WITH_SECURE_FORM_ENDPOINT';
+        const res = await fetch(ACTION_URL, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          ok.className = 'status ok';
+          form.reset();
+        } else {
+          err.className = 'status err';
+        }
+      } catch (_) {
+        err.className = 'status err';
+      }
+    });
+  </script>
+</body>
+</html>
