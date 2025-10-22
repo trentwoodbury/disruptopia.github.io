@@ -1,211 +1,63 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Disruptopia</title>
-  <meta name="description" content="Disruptopia board game resources and contact." />
-
-  <!-- Security headers (meta form) -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self';
-    style-src 'self';
-    img-src 'self' data:;
-    connect-src https://formspree.io;
-    form-action https://formspree.io;
-    object-src 'none';
-    base-uri 'none';
-    frame-ancestors 'none';
-    upgrade-insecure-requests">
-  <meta http-equiv="Referrer-Policy" content="no-referrer">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-
-  <style>
-    :root{ --bg:#0b0f14; --card:#111826; --muted:#9fb0c3; --text:#e6eef8; --accent:#64d2ff; --accent-2:#00ffa6; --danger:#ff6476; }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:
-      radial-gradient(1200px 800px at 100% -10%,#112335 20%,transparent),
-      radial-gradient(900px 700px at -10% 110%,#0f1b28 10%,transparent),
-      var(--bg);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1000px;margin:auto;padding:32px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 10px 30px rgba(0,255,166,.25)}
-    h1{font-size:28px;letter-spacing:.5px;margin:0}
-    .tag{font-size:14px;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .card{grid-column:span 4;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid rgba(255,255,255,.07);border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.35);padding:18px;transition:transform .18s, box-shadow .18s, border-color .18s}
-    .card:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.45);border-color:rgba(255,255,255,.18)}
-    .card h2{font-size:18px;margin:4px 0 8px}
-    .card p{margin:0 0 14px;color:var(--muted);font-size:14px}
-    .cta{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(100,210,255,.07);border:1px solid rgba(100,210,255,.35);padding:10px 12px;border-radius:12px}
-    .cta span{font-size:14px}
-    .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#001418;font-weight:600}
-    .btn:focus{outline:2px solid var(--accent)}
-    .contact{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:18px}
-    form{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    label{font-size:13px;color:var(--muted)}
-    .field{grid-column:span 6;display:flex;flex-direction:column;gap:8px}
-    .field.full{grid-column:span 12}
-    input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0e1520;color:var(--text)}
-    input:focus,textarea:focus{outline:2px solid var(--accent)}
-    textarea{min-height:140px;resize:vertical}
-    .actions{display:flex;gap:12px;align-items:center}
-    .pill{font-size:12px;color:var(--muted)}
-    .note{font-size:12px;color:var(--muted)}
-    .status{display:none;margin-top:10px;font-size:14px}
-    .status.ok{display:block;color:var(--accent-2)}
-    .status.err{display:block;color:var(--danger)}
-    footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}
-    @media (max-width:900px){.card{grid-column:span 6}.field{grid-column:span 12}}
-    @media (max-width:580px){header{flex-direction:column;align-items:flex-start}.card{grid-column:span 12}}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>Disruptopia</h1>
-          <div class="tag">Board game resources and contact</div>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disruptopia - Board Game</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>DISRUPTOPIA</h1>
+        <div class="byline">
+          <img src="/selfie in style.png" alt="Trent Woodbury" class="avatar" />
+          <p>A game by Trent Woodbury</p>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <section class="grid" aria-label="Resources">
-      <article class="card" aria-labelledby="tts-title">
-        <h2 id="tts-title">Tabletop Simulator</h2>
-        <p>Load the latest TTS mod JSON.</p>
-        <div class="cta">
-          <span>Open the .json</span>
-          <a class="btn" href="DisruptopiaTTS.json" target="_blank" rel="noopener">Download</a>
-        </div>
-      </article>
+      <main>
+        <section class="links-section">
+          <h2>Game Resources</h2>
+          <ul class="resource-links">
+            <li>
+              <a href="/DisruptopiaTTS.json" download>TableTop Simulator JSON</a>
+            </li>
+            <li>
+              <a href="/DisruptopiaTTS4Player.json" download>TableTop Simulator 4 Player Setup</a>
+            </li>
+            <li>
+              <a href="/DisruptopiaRulebook.pdf" target="_blank">Disruptopia Rulebook</a>
+            </li>
+            <li>
+              <a href="/DisruptopiaSellSheet.pdf" target="_blank">Sell Sheet</a>
+            </li>
+            <li>
+              <a href="REPLACE_WITH_YOUTUBE_URL" target="_blank">Youtube Tutorial Video</a>
+            </li>
+          </ul>
+        </section>
 
-      <article class="card" aria-labelledby="yt-title">
-        <h2 id="yt-title">Tutorial Video</h2>
-        <p>How to play.</p>
-        <div class="cta">
-          <span>Watch on YouTube</span>
-          <a class="btn" href="REPLACE_WITH_YOUTUBE_URL" target="_blank" rel="noopener">Watch</a>
-        </div>
-      </article>
-
-      <article class="card" aria-labelledby="pdf-title">
-        <h2 id="pdf-title">Rulebook (PDF)</h2>
-        <p>Current version of the rules.</p>
-        <div class="cta">
-          <span>View the Rulebook</span>
-          <a class="btn" href="DisruptopiaRulebook.pdf" target="_blank" rel="noopener">Open</a>
-        </div>
-      </article>
-
-      <article class="card" aria-labelledby="sell-title">
-        <h2 id="sell-title">Sell Sheet (PDF)</h2>
-        <p>Quick overview for publishers and retailers.</p>
-        <div class="cta">
-          <span>View the Sell Sheet</span>
-          <a class="btn" href="DisruptopiaSellSheet.pdf" target="_blank" rel="noopener">Open</a>
-        </div>
-      </article>
-
-      <article class="card" aria-labelledby="savefile-title">
-        <h2 id="savefile-title">Full Game Setup (TTS Save)</h2>
-        <p>Disruptopia Setup for 4 Players in TTS.</p>
-        <div class="cta">
-          <span>Download the Save File</span>
-          <a class="btn" href="DisruptopiaTTS4Player.json" target="_blank" rel="noopener">Download</a>
-        </div>
-      </article>
-
-      <article class="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">Contact</h2>
-        <p class="note">Use the form to send an email without seeing the address. Messages are processed by Formspree.</p>
-        <form id="contact-form" aria-describedby="contact-note">
-          <input type="hidden" name="_gotcha" id="hp" value="">
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="120">
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required inputmode="email" maxlength="254">
-          </div>
-          <div class="field full">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required minlength="10" maxlength="5000"></textarea>
-          </div>
-          <div class="field full actions">
-            <button class="btn" type="submit">Send</button>
-            <span class="pill">Avg reply: 1–3 days</span>
-          </div>
-          <div id="status-ok" class="status" role="status" aria-live="polite">Message sent. Check your inbox for confirmation.</div>
-          <div id="status-err" class="status" role="status" aria-live="assertive">Send failed. Try again later.</div>
-        </form>
-      </article>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Disruptopia
-    </footer>
-  </div>
-
-  <script>
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Contact form
-    const form = document.getElementById('contact-form');
-    const ok = document.getElementById('status-ok');
-    const err = document.getElementById('status-err');
-
-    function hideStatuses() {
-      ok.className = 'status';
-      err.className = 'status';
-    }
-    hideStatuses();
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      // Honeypot
-      if (document.getElementById('hp').value) return;
-
-      hideStatuses();
-
-      // Collect data
-      const data = Object.fromEntries(new FormData(form));
-      data._subject = 'Disruptopia contact';
-
-      try {
-        const res = await fetch('https://formspree.io/f/myznalpo', {
-          method: 'POST',
-          mode: 'cors',
-          cache: 'no-store',
-          credentials: 'omit',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        if (res.ok) {
-          ok.className = 'status ok';
-          form.reset();
-        } else {
-          // Log details to console for debugging
-          let detail = '';
-          try { detail = await res.text(); } catch {}
-          console.error('Formspree error:', res.status, detail);
-          err.className = 'status err';
-        }
-      } catch (ex) {
-        console.error('Network error:', ex);
-        err.className = 'status err';
-      }
-    });
-  </script>
-</body>
+        <section class="contact-section">
+          <h2>Get in Touch</h2>
+          <form action="https://formspree.io/f/myznalpo" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
